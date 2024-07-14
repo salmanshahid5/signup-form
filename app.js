@@ -28,6 +28,7 @@ document.getElementById('signupform')
         users.push({
             username,
             password,
+            post:[],
         });
 
         localStorage.setItem('users', JSON.stringify(users));

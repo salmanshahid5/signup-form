@@ -136,6 +136,6 @@ textarea#postcontent {
 #posts div.post p {
     margin: 0;
 }
-/* .hidden {
+.hidden {
     display: none;
-} */
+}

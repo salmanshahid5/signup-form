@@ -33,8 +33,8 @@ function displayPosts() {
             <p class="timeStamp"> Posted at: ${post.createdAt}</p>
             <div class = "actions">
             <button onclick="editPost(${index})">Edit</button>
-                    <button onclick="deletePost(${index})">Delete</button>
-                </div>`;
+            <button onclick="deletePost(${index})">Delete</button>
+            </div>`;
             postsSection.appendChild(postElement);
         });
     }
@@ -48,19 +48,24 @@ document.getElementById('postBtn')
             alert("Please enter some content for your post.");
             return;
         }
-
-        // setTimeout(() => {
-        //     const post = {
-        //         author: loginUser.username,
-        //         content: content,
-        //         createdAt: new Date().toLocaleString(),
-        //     }
-        //     loginUser.posts.unshift(post)
+        
+        setTimeout(() => {
+            const post = {
+                author: loginUser.username,
+                content: content,
+                createdAt: new Date().toLocaleString(),
+            }
+            // loginUser.posts.unshift(post)
         //     localStorage.setItem("loginUser", JSON.stringify(loginUser));
 
         //     document.getElementById("postcontent").value = "";
         //     displayPosts();
-        // }, 1000);
-    })
+        }, 1000);
+    });
 
-
+// On home page load, display posts and username
+    if (document.getElementById("homepage")) {
+        document.getElementById("homepage").classList.remove("hidden");
+        document.getElementById("username").textContent = loginUser.username;
+        displayPosts();
+    }
